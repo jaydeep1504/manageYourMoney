@@ -25,6 +25,16 @@ public class UserDetails {
     private String contactNo;
     @Column(name = "EMAIL_ID")
     private String emailID;
+    @Column(name = "GENDER")
+    private String gender;
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
     @OneToMany(mappedBy = "userDetails")
     private Set<ExpenseDetails> expenseDetails=new HashSet<>();
