@@ -9,7 +9,7 @@ public class ManageYourMoneyApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(ManageYourMoneyApplication.class, args);
-		System.out.println("DB Connection Successful");
+
 	}
 
 }

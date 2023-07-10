@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MYM: Users</title>
+</head>
+<body>
+<table>
+  <tr>
+    <td>
+      <b>User Name</b>
+    </td>
+    <td>
+      <b>Date of Birth</b>
+    </td>
+    <td>
+      <b>Contact Number</b>
+    </td>
+    <td>
+      <b>Email ID</b>
+    </td>
+    <td>
+      <b>Gender</b>
+    </td>
+  </tr>
+  <tr th:each="user: ${users}">
+    <td th:text="${user.firstName} +' '+ ${user.lastName}">User Name</td>
+    <td th:text="${user.dob}">Date of Birth</td>
+    <td th:text="${user.contactNo}">Contact Number</td>
+    <td th:text="${user.emailID}">Email ID</td>
+    <td th:text="${user.gender}">Gender</td>
+  </tr>
+</table>
+</body>
+</html>
