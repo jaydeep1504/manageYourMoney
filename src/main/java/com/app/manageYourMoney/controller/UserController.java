@@ -1,6 +1,7 @@
 package com.app.manageYourMoney.controller;
 
 import com.app.manageYourMoney.data.entity.UserDetails;
+
 import com.app.manageYourMoney.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -48,7 +48,6 @@ public class UserDetails {
     public void setUserType(String userType) {
         this.userType = userType;
     }
-
     public String getGender() {
         return gender;
     }

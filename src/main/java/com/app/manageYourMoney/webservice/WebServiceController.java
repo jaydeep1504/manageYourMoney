@@ -19,13 +19,9 @@ public class WebServiceController {
         return this.userRepository.findAll();
     }
     @PostMapping(path = "/adduser")
-    public String addUser(@RequestBody UserDetails userDetails){
+    public String addUser(@RequestBody UserDetails userDetails) {
         this.userRepository.save(userDetails);
-        return userDetails.toString()+" added.";
+        return "addUser";
     }
-    @DeleteMapping(path = "/deleteuser/{id}")
-    public String deleteUser(@PathVariable("id") Integer id){
-        this.userRepository.deleteById(id);
-        return "User "+id+" deleted.";
-    }
+
 }
