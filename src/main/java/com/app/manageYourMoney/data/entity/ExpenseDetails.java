@@ -24,10 +24,6 @@ public class ExpenseDetails {
     private UserDetails userDetails;
 
     @ManyToOne
-    @JoinColumn(name = "CATEGORY_ID")
-    private Category category;
-
-    @ManyToOne
     @JoinColumn(name = "ITEM_ID")
     private ItemDetails itemDetails;
 

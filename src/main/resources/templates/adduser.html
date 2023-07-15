@@ -4,77 +4,27 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" integrity="sha384-PJsj/BTMqILvmcej7ulplguok8ag4xFTPryRq8xevL7eBYSmpXKcbNVuy+P0RMgq" crossorigin="anonymous">
 
     <title>Manage Your Money: Add User</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">MYM</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        Expenses
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="#">Add Expense</a></li>
-                        <li><a class="dropdown-item" href="#">View Expenses</a></li>
-                        <li><a class="dropdown-item" href="#">Modify Expense</a></li>
-                        <li><a class="dropdown-item" href="#">Delete Expense</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        Items
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="#">Add Item</a></li>
-                        <li><a class="dropdown-item" href="#">View Items</a></li>
-                        <li><a class="dropdown-item" href="#">Modify Item</a></li>
-                        <li><a class="dropdown-item" href="#">Delete Item</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        Category
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="#">Add Category</a></li>
-                        <li><a class="dropdown-item" href="#">View Categories</a></li>
-                        <li><a class="dropdown-item" href="#">Modify Category</a></li>
-                        <li><a class="dropdown-item" href="#">Delete Category</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        Users
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="/adduser">Add User</a></li>
-                        <li><a class="dropdown-item" href="/getalluser">View Users</a></li>
-                        <li><a class="dropdown-item" href="#">Modify User</a></li>
-                        <li><a class="dropdown-item" href="#">Delete User</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false">
-                        Logout
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+$(function(){
+  $("#nav-placeholder").load("nav.html");
+});
+</script>
+<!--end of Navigation bar-->
 <div class="container container my-5 col-md-7" style="border:1px solid black;">
     <h4 class="text-center">Register new User</h4>
-    <form class="col-md-4 offset-md-4" th:action="@{/save}" method="post">
+    <form class="col-md-4 offset-md-4" th:action="@{/saveuser}" method="post">
             <div class="mb-3">
                 <label for="firstName" class="form-label">First Name
                 </label> <input type="text" class="form-control" name="firstName">

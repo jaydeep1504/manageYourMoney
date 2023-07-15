@@ -18,8 +18,6 @@ public class Category {
     @OneToMany(mappedBy = "category")
     private Set<ItemDetails> itemDetails=new HashSet<>();
 
-    @OneToMany(mappedBy = "category")
-    private Set<ExpenseDetails> expenseDetails=new HashSet<>();
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CATEGORY_ID")
