@@ -15,6 +15,9 @@ public class UserDetails {
     private int userId;
     @Column(name = "USER_NAME")
     private String userName;
+
+    @Column(name = "PASSWORD")
+    private String passwd;
     @Column(name = "FIRST_NAME")
     private String firstName;
     @Column(name = "LAST_NAME")
@@ -27,6 +30,24 @@ public class UserDetails {
     private String emailID;
     @Column(name = "GENDER")
     private String gender;
+    @Column(name = "USER_TYPE")
+    private String userType;
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public String getPasswd() {
+        return passwd;
+    }
+
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
 
     public String getGender() {
         return gender;
@@ -97,14 +118,18 @@ public class UserDetails {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "UserDetails{" +
                 "userId=" + userId +
                 ", userName='" + userName + '\'' +
+                ", passwd='" + passwd + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", dob=" + dob +
                 ", contactNo='" + contactNo + '\'' +
                 ", emailID='" + emailID + '\'' +
+                ", gender='" + gender + '\'' +
+                ", userType='" + userType + '\'' +
+                ", expenseDetails=" + expenseDetails +
                 '}';
     }
 }
