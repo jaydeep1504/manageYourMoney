@@ -1,6 +1,7 @@
 package com.app.manageYourMoney.controller;
 
 import com.app.manageYourMoney.data.entity.ItemDetails;
+import com.app.manageYourMoney.service.CategoryService;
 import com.app.manageYourMoney.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,8 +16,11 @@ public class ItemController {
 
     @Autowired
     private ItemService itemService;
+    @Autowired
+    private CategoryService categoryService;
     @GetMapping("/additem")
-    public String addItem(){
+    public String addItem(Model model){
+        model.addAttribute("categories",categoryService.getAllCategories());
         return "additem";
     }
     @PostMapping("/saveitem")

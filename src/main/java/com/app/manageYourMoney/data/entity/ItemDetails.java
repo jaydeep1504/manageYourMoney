@@ -21,9 +21,6 @@ public class ItemDetails {
     @Column(name = "ITEM_DESCRIPTION")
     private String itemDesc;
 
-    @Column(name = "ITEM_COUNT")
-    private int itemCount;
-
     @OneToMany(mappedBy = "itemDetails")
     private Set<ExpenseDetails> expenseDetails=new HashSet<>();
 
@@ -59,14 +56,6 @@ public class ItemDetails {
         this.itemDesc = itemDesc;
     }
 
-    public int getItemCount() {
-        return itemCount;
-    }
-
-    public void setItemCount(int itemCount) {
-        this.itemCount = itemCount;
-    }
-
     @Override
     public String toString() {
         return "ItemDetails{" +
@@ -74,7 +63,6 @@ public class ItemDetails {
                 ", category=" + category +
                 ", itemName='" + itemName + '\'' +
                 ", itemDesc='" + itemDesc + '\'' +
-                ", itemCount=" + itemCount +
                 '}';
     }
 }
