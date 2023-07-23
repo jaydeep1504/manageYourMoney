@@ -15,9 +15,6 @@ import java.util.Set;
 @Table(name = "CATEGORY")
 public class Category {
 
-    @OneToMany(mappedBy = "category")
-    private Set<ItemDetails> itemDetails=new HashSet<>();
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CATEGORY_ID")
@@ -26,6 +23,29 @@ public class Category {
     private String categoryName;
     @Column(name = "CATEGORY_DESCRIPTION")
     private String categoryDesc;
+    
+    
+    
+    public Category() {
+	}
+
+	public Category(int categoryID) {
+		super();
+		this.categoryID = categoryID;
+	}
+
+	public Category(int categoryID, String categoryName, String categoryDesc, Set<ItemDetails> itemDetails) {
+		super();
+		this.categoryID = categoryID;
+		this.categoryName = categoryName;
+		this.categoryDesc = categoryDesc;
+		this.itemDetails = itemDetails;
+	}
+
+
+
+	@OneToMany(mappedBy = "category")
+    private Set<ItemDetails> itemDetails=new HashSet<>();
 
     public int getCategoryID() {
         return categoryID;
@@ -52,11 +72,8 @@ public class Category {
     }
 
     @Override
-    public String toString() {
-        return "Category{" +
-                "categoryID=" + categoryID +
-                ", categoryName='" + categoryName + '\'' +
-                ", categoryDesc='" + categoryDesc + '\'' +
-                '}';
-    }
+	public String toString() {
+		return "Category [categoryID=" + categoryID + ", categoryName=" + categoryName + ", categoryDesc="
+				+ categoryDesc + ", itemDetails=" + itemDetails + "]";
+	}
 }

@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 @Entity
 @Table(name = "ITEM_DETAILS")
 public class ItemDetails {
@@ -12,9 +14,11 @@ public class ItemDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ITEM_ID")
     private int itemId;
+    
     @ManyToOne
     @JoinColumn(name = "CATEGORY_ID")
     private Category category;
+    
     @Column(name = "ITEM_NAME")
     private String itemName;
 
@@ -23,8 +27,22 @@ public class ItemDetails {
 
     @OneToMany(mappedBy = "itemDetails")
     private Set<ExpenseDetails> expenseDetails=new HashSet<>();
+        
 
-    public int getItemId() {
+    public ItemDetails() {
+		
+	}
+
+	public ItemDetails(int itemId, Category category, String itemName, String itemDesc,
+			Set<ExpenseDetails> expenseDetails) {
+    	super();
+		this.category = category;
+		this.itemName = itemName;
+		this.itemDesc = itemDesc;
+		this.expenseDetails = expenseDetails;
+	}
+
+	public int getItemId() {
         return itemId;
     }
 

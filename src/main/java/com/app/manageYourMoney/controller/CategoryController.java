@@ -33,12 +33,12 @@ public class CategoryController {
 
     @GetMapping("/editcategory/{id}")
     public String getCategoryById(@PathVariable int id,Model model){
-        model.addAttribute("catagory",categoryService.getCategoryById(id));
+        model.addAttribute("category",categoryService.getCategoryById(id));
         return "editcategory";
     }
 
     @GetMapping("/deletecategory/{id}")
-    public String deleteCategory(int id){
+    public String deleteCategory(@PathVariable int id){
         categoryService.deleteCategoryById(id);
         return "redirect:/getallcategories";
     }

@@ -25,12 +25,14 @@ public class ItemController {
     }
     @PostMapping("/saveitem")
     public String saveItemDetails(@ModelAttribute ItemDetails itemDetails){
+    	//System.out.println(itemDetails);
         itemService.saveItem(itemDetails);
         return "redirect:/getallitems";
     }
 
     @GetMapping("/getallitems")
     public String getAllItems(Model model){
+    	//System.out.println(itemService.getAllItems());
         model.addAttribute("items",itemService.getAllItems());
         return "getallitems";
     }
@@ -38,6 +40,7 @@ public class ItemController {
     @GetMapping("/edititem/{id}")
     public String getItemById(@PathVariable int id,Model model){
         model.addAttribute("item",itemService.getItemById(id));
+        model.addAttribute("categories", categoryService.getAllCategories());
         return "edititem";
     }
 

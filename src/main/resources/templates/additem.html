@@ -34,14 +34,15 @@ $(function(){
             </label> <input type="text" class="form-control" name="itemDesc">
         </div>
         <div class="mb-3">
-            <label for="categoryID" class="form-label">Gender
+            <label for="categoryID" class="form-label">Item Category
             </label>
-            <select class="form-select" name="categoryID">
+            <select class="form-select" name="category">
                 <option selected>Select Category</option>
                 <option th:each="category :${categories}"
                         th:value="${category.categoryID}"
                         th:text="${category.categoryName}"></option>
             </select>
+           
         </div>
         <div class="mb-3">
             <button type="submit" class="btn btn-primary">Save</button>

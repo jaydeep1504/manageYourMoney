@@ -25,41 +25,29 @@ $(function(){
 </script>
 <!--end of Navigation bar-->
 <div class="container my-3 col-md-7">
-  <h4 class="text-left">Registered Users</h4>
+  <h4 class="text-left">Registered Items</h4>
 <table class="table table-striped table-hover">
   <tr>
     <td>
-      <b>User Name</b>
+      <b>Item Name</b>
     </td>
     <td>
-      <b>Date of Birth</b>
+      <b>Item Description</b>
     </td>
     <td>
-      <b>Contact Number</b>
-    </td>
-    <td>
-      <b>Email ID</b>
-    </td>
-    <td>
-      <b>Gender</b>
-    </td>
-    <td>
-      <b>User Type</b>
+      <b>Category Name</b>
     </td>
     <td>
       <b>Action</b>
     </td>
   </tr>
-  <tr th:each="user: ${users}">
-    <td th:text="${user.firstName} +' '+ ${user.lastName}">User Name</td>
-    <td th:text="${user.dob}">Date of Birth</td>
-    <td th:text="${user.contactNo}">Contact Number</td>
-    <td th:text="${user.emailID}">Email ID</td>
-    <td th:text="${user.gender}">Gender</td>
-    <td th:text="${user.userType}">User Type</td>
+  <tr th:each="item: ${items}">
+    <td th:text="${item.itemName}">Item Name</td>
+    <td th:text="${item.itemDesc}">Item Description</td>
+    <td th:text="${item.category.categoryName}">Category</td>
     <td>
-      <a th:href="@{/deleteUser/{id}(id=${user.userId})}"><i class="fa-sharp fa-solid fa-trash ms-2" style="color: #1f5151;"></i></a>
-      <a th:href="@{/editUser/{id}(id=${user.userId})}"><i class="fa-sharp fa-solid fa-pen-to-square ms-2" style="color: #1f5151;"></i></a>
+      <a th:href="@{/deleteitem/{id}(id=${item.itemId})}"><i class="fa-sharp fa-solid fa-trash ms-2" style="color: #1f5151;"></i></a>
+      <a th:href="@{/edititem/{id}(id=${item.itemId})}"><i class="fa-sharp fa-solid fa-pen-to-square ms-2" style="color: #1f5151;"></i></a>
     </td>
   </tr>
 </table>

@@ -42,8 +42,8 @@ $(function(){
     <td th:text="${category.categoryName}">Category Name</td>
     <td th:text="${category.categoryDesc}">Category Description</td>
     <td>
-      <a th:href="@{/deleteCategory/{id}(id=${category.categoryID})}"><i class="fa-sharp fa-solid fa-trash ms-2" style="color: #1f5151;"></i></a>
-      <a th:href="@{/editCategory/{id}(id=${category.categoryID})}"><i class="fa-sharp fa-solid fa-pen-to-square ms-2" style="color: #1f5151;"></i></a>
+      <a th:href="@{/deletecategory/{id}(id=${category.categoryID})}"><i class="fa-sharp fa-solid fa-trash ms-2" style="color: #1f5151;"></i></a>
+      <a th:href="@{/editcategory/{id}(id=${category.categoryID})}"><i class="fa-sharp fa-solid fa-pen-to-square ms-2" style="color: #1f5151;"></i></a>
     </td>
   </tr>
 </table>
